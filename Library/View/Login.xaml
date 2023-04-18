@@ -93,7 +93,7 @@
                              Margin="0,5,0,0"
                                >
                         <TextBox.Background>
-                            <ImageBrush ImageSource="\Imagenes\usuario1.png"
+                            <ImageBrush ImageSource="..\Imagenes\usuario1.png"
                                         Stretch="None"
                                         AlignmentX="Left"
                                        />
@@ -114,7 +114,7 @@
                              Margin="0,5,0,0"
                                >
                         <PasswordBox.Background>
-                            <ImageBrush ImageSource="\Imagenes\bloquear1.png"
+                            <ImageBrush ImageSource="..\Imagenes\bloquear1.png"
                                         Stretch="None"
                                         AlignmentX="Left"
                                        />
@@ -173,7 +173,7 @@
                              Margin="0,5,0,0"
                                >
                         <TextBox.Background>
-                            <ImageBrush ImageSource="C:\Users\fushi\source\repos\Library\Library\Imagenes\usuario1.png"
+                            <ImageBrush ImageSource="..\Imagenes\usuario1.png"
                                         Stretch="None"
                                         AlignmentX="Left"
                                        />
@@ -194,7 +194,7 @@
                              Margin="0,5,0,0"
                                >
                         <PasswordBox.Background>
-                            <ImageBrush ImageSource="C:\Users\fushi\source\repos\Library\Library\Imagenes\bloquear1.png"
+                            <ImageBrush ImageSource="..\Imagenes\bloquear1.png"
                                         Stretch="None"
                                         AlignmentX="Left"
                                        />
