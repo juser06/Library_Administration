@@ -9,38 +9,45 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        MouseDown="Window_MouseDown"
-        AllowsTransparency="True">
+        MouseDown="Window_MouseDown">
+    <!-- Grid general que contiene la imagen de fondo y el resto del diseño -->
     <Grid>
-        <Image Source= "C:\Users\fushi\source\repos\Library\Library\Imagenes\fondo.png"
+
+        <Image Source= "\Imagenes\fondo.png"
                Stretch="Fill"
-               Opacity="0.4"/>
+               Opacity="0.2"/>
+        <!--Grid para el cuerpo de la ventana, es el que hace las filas-->
         <Grid>
             <Grid.RowDefinitions>
+
                 <RowDefinition Height="20"/>
                 <RowDefinition/>
-            </Grid.RowDefinitions>
 
+            </Grid.RowDefinitions>
+            <!--Grid de la barra superior-->
             <Grid Grid.Row="0">
+
                 <Grid.ColumnDefinitions>
+
                     <ColumnDefinition/>
                     <ColumnDefinition Width="20"/>
                     <ColumnDefinition Width="20"/>
-                </Grid.ColumnDefinitions>
 
+                </Grid.ColumnDefinitions>
+                <!--texto del nombre de la ventana-->
                 <TextBlock Text="Biblioteca Log In"
                        FontSize="15"
                        FontFamily="Georgia"
                        VerticalAlignment="Center"
                        Margin="10,0,0,0"/>
-
+                <!--boton para minimizar-->
                 <Button Content="-"
                     Grid.Column="1"
                     Click="BotonMinimizarVentana"
                         Background="Transparent"
                         BorderBrush="Transparent"
                         Cursor="Hand"/>
-
+                <!--boton para cerrar-->
                 <Button Content="X"
                     Grid.Column="2"
                     Click="BotonCerrarVentana"
@@ -48,15 +55,170 @@
                         BorderBrush="Transparent"
                         Cursor="Hand"/>
             </Grid>
+            <!--Grid del cuerpo de la ventana-->
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <!--para los datos del usuario-->
                 <StackPanel
                         VerticalAlignment="Center"
-                        >
+                    Width="300"
+                    Grid.Column="0">
 
+                    <Image Source="\Imagenes\tarjeta.png" Height="102" Width="102"/>
+
+                    <TextBlock Text="usuarios de la biblioteca"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontSize="20"
+                               FontFamily="Georgia"
+                               FontWeight="Bold"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Nombre de usuario"
+                               Margin="0,35,0,0"
+                               FontSize="15"
+                               FontWeight="Medium"
+                               FontFamily="Georgia"/>
+
+                    <TextBox x:Name="NombreDeUsuario"
+                               FontSize="15"
+                               BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2"
+                             Padding="20,0,0,0"
+                             Margin="0,5,0,0"
+                               >
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="C:\Users\fushi\source\repos\Library\Library\Imagenes\usuario1.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"
+                                       />
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBlock Text="Contraseña"
+                               Margin="0,35,0,0"
+                               FontSize="15"
+                               FontWeight="Medium"
+                               FontFamily="Georgia"/>
+
+                    <PasswordBox x:Name="ContraseñaUsuario"
+                               FontSize="15"
+                               BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2"
+                             Padding="20,0,0,0"
+                             Margin="0,5,0,0"
+                               >
+                        <PasswordBox.Background>
+                            <ImageBrush ImageSource="C:\Users\fushi\source\repos\Library\Library\Imagenes\bloquear1.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"
+                                       />
+                        </PasswordBox.Background>
+                    </PasswordBox>
+
+                    <Button Content="Ingresar"
+                            Margin="0,60,0,0"
+                            Width="120"
+                            Cursor="Hand"
+                            FontSize="20"
+                            FontFamily="Georgia"
+                            Background="Azure"/>
+
+                    <TextBlock Text="¿ Olvidaste la contraseña ?"
+                               HorizontalAlignment="Center"
+                               Margin="0,5,0,0"/>
+
+                    <Button Content="Apreta acá"
+                            Width="70"
+                            Background="Transparent"
+                            Cursor="Hand"
+                            BorderThickness="0,0,0,1"
+                            BorderBrush="Black"/>
+                </StackPanel>
+
+                <!--para los datos del Admin-->
+                <StackPanel
+                        VerticalAlignment="Center"
+                    Width="300"
+                    Grid.Column="1">
+
+                    <Image Source="\Imagenes\avatar.png" Height="102" Width="102"/>
+
+                    <TextBlock Text="administradores"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontSize="20"
+                               FontFamily="Georgia"
+                               FontWeight="Bold"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Nombre de usuario"
+                               Margin="0,35,0,0"
+                               FontSize="15"
+                               FontWeight="Medium"
+                               FontFamily="Georgia"/>
+
+                    <TextBox x:Name="NombreDeAdmin"
+                               FontSize="15"
+                               BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2"
+                             Padding="20,0,0,0"
+                             Margin="0,5,0,0"
+                               >
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="C:\Users\fushi\source\repos\Library\Library\Imagenes\usuario1.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"
+                                       />
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBlock Text="Contraseña"
+                               Margin="0,35,0,0"
+                               FontSize="15"
+                               FontWeight="Medium"
+                               FontFamily="Georgia"/>
+
+                    <PasswordBox x:Name="ContraseñaAdmin"
+                               FontSize="15"
+                               BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2"
+                             Padding="20,0,0,0"
+                             Margin="0,5,0,0"
+                               >
+                        <PasswordBox.Background>
+                            <ImageBrush ImageSource="C:\Users\fushi\source\repos\Library\Library\Imagenes\bloquear1.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"
+                                       />
+                        </PasswordBox.Background>
+                    </PasswordBox>
+
+                    <Button Content="Ingresar"
+                            Margin="0,60,0,0"
+                            Width="120"
+                            Cursor="Hand"
+                            FontSize="20"
+                            FontFamily="Georgia"
+                            Background="Azure"/>
+
+                    <TextBlock Text="¿ Olvidaste la contraseña ?"
+                               HorizontalAlignment="Center"
+                               Margin="0,5,0,0"/>
+
+                    <Button Content="Apreta acá"
+                            Width="70"
+                            Background="Transparent"
+                            Cursor="Hand"
+                            BorderThickness="0,0,0,1"
+                            BorderBrush="Black"/>
                 </StackPanel>
             </Grid>
 

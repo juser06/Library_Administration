@@ -102,9 +102,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Imagenes\" />
     <Folder Include="Model\" />
     <Folder Include="ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\usuario1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\tarjeta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\bloquear1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\avatar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
