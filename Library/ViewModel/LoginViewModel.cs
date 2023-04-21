@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Library.ViewModel
 {
@@ -64,6 +65,26 @@ namespace Library.ViewModel
             }
         }
         // -> Command
+        public ICommand LoginCommand { get; }
+        public ICommand RecoverPasswordCommand { get; }
+        public ICommand ShowPasswordCommand { get; }
+        public ICommand RememberPasswordCommand { get; }
 
+        //Constructors
+        public LoginViewModel()
+        {
+            LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
+
+        }
+         
+        private bool CanExecuteLoginCommand(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ExecuteLoginCommand(object obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
