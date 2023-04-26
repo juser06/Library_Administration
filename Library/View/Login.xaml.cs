@@ -41,5 +41,6 @@ namespace Library.View
         {
             Application.Current.Shutdown();
         }
+
     }
 }

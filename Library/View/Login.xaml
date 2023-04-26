@@ -4,12 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library.View"
+        xmlns:viewModel ="clr-namespace:Library.ViewModel"
         mc:Ignorable="d"
         Title="Login" Height="550" Width="800"
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         MouseDown="Window_MouseDown">
+
+    <Window.DataContext>
+        <viewModel:LoginViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
+    </Window.Visibility>
     <!-- Grid general que contiene la imagen de fondo y el resto del diseño -->
     <Grid>
 
@@ -86,11 +99,12 @@
                                FontFamily="Georgia"/>
 
                     <TextBox x:Name="NombreDeUsuario"
+                             Text="{Binding Username}"
                                FontSize="15"
                                BorderBrush="DarkGray"
                              BorderThickness="0,0,0,2"
                              Padding="20,0,0,0"
-                             Margin="0,5,0,0"
+                             Margin="0,5,0,0" TextChanged="NombreDeUsuario_TextChanged"
                                >
                         <TextBox.Background>
                             <ImageBrush ImageSource="..\Imagenes\usuario1.png"
@@ -107,6 +121,7 @@
                                FontFamily="Georgia"/>
 
                     <PasswordBox x:Name="ContraseñaUsuario"
+                                 
                                FontSize="15"
                                BorderBrush="DarkGray"
                              BorderThickness="0,0,0,2"

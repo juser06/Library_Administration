@@ -74,17 +74,32 @@ namespace Library.ViewModel
         public LoginViewModel()
         {
             LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
-
+            RecoverPasswordCommand = new ViewModelCommand(p => ExecuteRecoverPassCommand ( "", ""));
         }
-         
+
         private bool CanExecuteLoginCommand(object obj)
         {
-            throw new NotImplementedException();
+            bool validData;
+            if (string.IsNullOrWhiteSpace(Username) || Username.Length < 3 || Password.Length < 3 || Password == null)
+            {
+                validData = false;
+            }
+            else
+            {
+                validData = true;
+            }
+            return validData;
         }
 
         private void ExecuteLoginCommand(object obj)
         {
             throw new NotImplementedException();
         }
+
+        private void ExecuteRecoverPassCommand(string v1, string v2)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
